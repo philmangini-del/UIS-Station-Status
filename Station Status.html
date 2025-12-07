@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbered Boxes Grid</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers all rows horizontally */
+            margin-top: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center; /* Ensures boxes within the row are centered if the row width is smaller than the page */
+            gap: 10px; /* Space between boxes */
+            margin-bottom: 10px; /* Space between rows */
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            font-size: 18px; /* Required font size */
+            color: white;
+            /* Initial state (green) */
+            background-color: green;
+            transition: background-color 0.3s;
+        }
+
+        /* Class for the toggled state (red) */
+        .box.is-red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Row 1: Boxes 1 through 12 -->
+    <div class="row">
+        <!-- Generate boxes 1 to 12 -->
+        <script>
+            for (let i = 1; i <= 12; i++) {
+                document.write(`<div class="box" onclick="toggleColor(this)">${i}</div>`);
+            }
+        </script>
+    </div>
+
+    <!-- Row 2: Boxes 13 through 25 -->
+    <div class="row">
+        <!-- Generate boxes 13 to 25 -->
+        <script>
+            for (let i = 13; i <= 25; i++) {
+                document.write(`<div class="box" onclick="toggleColor(this)">${i}</div>`);
+            }
+        </script>
+    </div>
+
+    <!-- Row 3: Boxes 26 through 34 -->
+    <div class="row">
+        <!-- Generate boxes 26 to 34 -->
+        <script>
+            for (let i = 26; i <= 34; i++) {
+                document.write(`<div class="box" onclick="toggleColor(this)">${i}</div>`);
+            }
+        </script>
+    </div>
+
+    <!-- Row 4: Boxes 35 through 42 -->
+    <div class="row">
+        <!-- Generate boxes 35 to 42 -->
+        <script>
+            for (let i = 35; i <= 42; i++) {
+                document.write(`<div class="box" onclick="toggleColor(this)">${i}</div>`);
+            }
+        </script>
+    </div>
+
+    <script>
+        // JavaScript function to toggle the 'is-red' class on a clicked element
+        function toggleColor(element) {
+            element.classList.toggle('is-red');
+        }
+    </script>
+
+</body>
+</html>
